@@ -9,8 +9,8 @@ namespace bank                                                                //
             Console.Write("Введите ваш баланс в долларах($): ");
             var userInput = Console.ReadLine();
             
-            double RuCourse = 63.7, comission = 0.37, ruBalance, balance;
-            while(!double.TryParse(userInput, out balance))                     // Ждём корректного ввода пользователя
+            decimal RuCourse = 63.7, comission = 0.37, ruBalance, balance;
+            while(!decimal.TryParse(userInput, out balance))                     // Ждём корректного ввода пользователя
             {
                 Console.Write("Введите ваш баланс в долларах($): ");
                 userInput = Console.ReadLine();
