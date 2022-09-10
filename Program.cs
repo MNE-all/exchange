@@ -15,18 +15,9 @@ namespace bank                                                                //
                 Console.Write("Введите ваш баланс в долларах($): ");
                 userInput = Console.ReadLine();
             }
-
-            Console.WriteLine($"Ваш баланс в рублях по курсу 63,7: {balance * RuCourse: ###,###.##} руб.");
-            if (balance > 500)                                          // Если > 500, то коммисия = 0,37; Если <= 500, то коммисия = 8 руб.
-            {
-                ruBalance = balance * RuCourse / 100 * (100 - comission);
+            
+            balance > 500 ? ruBalance = balance * RuCourse / 100 * (100 - comission): ruBalance = balance * RuCourse - 8;
                 Console.WriteLine($"Ваш баланс в рублях по курсу 63,7 с учётом комиссии: {ruBalance: ###,###.##} руб.");
-            }
-            else
-            {
-                ruBalance = balance * RuCourse - 8;
-                Console.WriteLine($"Ваш баланс в рублях по курсу 63,7 с учётом комиссии: {ruBalance: ###,###.##} руб.");
-            }
         }
     }
     class Program                                       // Тут я просто баловался с классами, по сути можно всё сделать через один Main()
