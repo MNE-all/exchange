@@ -8,15 +8,14 @@ namespace bank                                                                //
         {
             Console.Write("Введите ваш баланс в долларах($): ");
             var userInput = Console.ReadLine();
-            
-            decimal RuCourse = 63.7, comission = 0.37, ruBalance, balance;
+            decimal RuCourse = 63.7m, comission = 0.37m, balance = 0.0m;
             while(!decimal.TryParse(userInput, out balance))                     // Ждём корректного ввода пользователя
             {
                 Console.Write("Введите ваш баланс в долларах($): ");
                 userInput = Console.ReadLine();
             }
-            
-            balance > 500 ? ruBalance = balance * RuCourse / 100 * (100 - comission): ruBalance = balance * RuCourse - 8;
+            var ruBalance = balance > 500 ? balance * RuCourse / 100 * (100 - comission): balance * RuCourse - 8; 
+
                 Console.WriteLine($"Ваш баланс в рублях по курсу 63,7 с учётом комиссии: {ruBalance: ###,###.##} руб.");
         }
     }
