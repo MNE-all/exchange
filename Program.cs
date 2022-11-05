@@ -5,7 +5,7 @@ using Serilog.Core;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 
-namespace bank                                                                // Баловался с пространством имён
+namespace bank                                                                
 {
     class Trade
     {
